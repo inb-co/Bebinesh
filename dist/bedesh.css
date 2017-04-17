@@ -1,0 +1,85 @@
+.bedesh {
+  font-family: 'Vazir', 'Roboto', Tahoma;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 3000;
+  text-align: center;
+}
+.bedesh .begiresh-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 3001;
+}
+.bedesh .bedesh-container {
+  position: absolute;
+  display: inline-block;
+  vertical-align: middle;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  z-index: 3002;
+  height: 400px;
+  width: 800px;
+}
+.bedesh .bedesh-container .bedesh-header {
+  background-color: #ff4235;
+  border-radius: 0 0 30px 0;
+  position: relative;
+  overflow: hidden;
+  padding-top: 300px;
+}
+.bedesh .bedesh-container .bedesh-header .bedesh-header-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.bedesh .bedesh-container .bedesh-body {
+  background-color: white;
+  position: relative;
+  text-align: right;
+  padding: 12px 36px 24px;
+  border-radius: 0  30px 0 0;
+}
+.bedesh .bedesh-container .bedesh-body .bedesh-body-text {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 0 12px;
+}
+.bedesh .bedesh-container .bedesh-body .bedesh-form {
+  position: relative;
+}
+.bedesh .bedesh-container .bedesh-body .bedesh-form:before,
+.bedesh .bedesh-container .bedesh-body .bedesh-form:after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+.bedesh .bedesh-container .bedesh-body .bedesh-form input {
+  font-family: 'Vazir', 'Roboto', Tahoma;
+  font-size: 12px;
+  padding: 12px 0;
+  border: none;
+  float: left;
+  position: relative;
+}
+.bedesh .bedesh-container .bedesh-body .bedesh-form input[type="submit"] {
+  background-color: #ff4235;
+  color: white;
+  width: 20%;
+}
+.bedesh .bedesh-container .bedesh-body .bedesh-form input[type="email"] {
+  background-color: #eee;
+  color: black;
+  width: 80%;
+}
