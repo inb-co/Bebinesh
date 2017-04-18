@@ -1,6 +1,11 @@
 // Vars
 // Container
 @font: 'Vazir', 'Roboto', Tahoma;
+@support-color: #f32b1b;
+@main-color: #fff;
+
+//overlay
+@overlay-opacity: 50;
 
 .bedesh{
   font-family: @font;
@@ -10,7 +15,7 @@
   z-index: 3000;
   text-align: center;
   .begiresh-overlay{
-    background-color: rgba(0, 0, 0, .5);
+    background-color: fade(black, @overlay-opacity);
     position: absolute;
     top: 0; bottom: 0;
     right: 0; left: 0;
@@ -24,47 +29,53 @@
     margin: auto;
     z-index: 3002;
 
-    height: 400px; width: 800px;
     .bedesh-header{
-      background-color: #ff4235;
+      background-color: @support-color;
       border-radius: 0 0 30px 0;
-      position: relative;
-      overflow: hidden;
-      padding-top: 300px;
-      .bedesh-header-image{
-        position: absolute;
-        top: 0; bottom: 0;
-        right: 0; left: 0}
+      padding: 36px;
+      img{
+        width: 100%; height: auto;
+        path{fill: white}
+      }
     }
     .bedesh-body{
-      background-color: white;
+      background-color: @main-color;
       position: relative;
       text-align: right;
-      padding: 12px 36px 24px;
+      padding: 24px 36px 36px;
       border-radius: 0  30px 0 0;
-      .bedesh-body-text{
-        font-size: 14px;
-        font-weight: bold;
-        margin: 0 0 12px}
-      .bedesh-form{
+      form{
         position: relative;
         &:before, &:after{
           display: table;
           content: " ";
           clear: both}
+        p{
+          font-size: 12px;
+          font-weight: bold;
+          margin: 0 0 24px}
         input{
           font-family: @font;
           font-size: 12px;
-          padding: 12px 0;
+          line-height: 2;
+          padding: 12px;
           border: none;
-          float: left;
+          float: right;
           position: relative;
+          height: 50px;
+          outline: none !important;
           &[type="submit"]{
-            background-color: #ff4235;
-            color: white;
-            width: 20%}
+            background-color: @support-color;
+            color: @main-color;
+            width: 20%;
+            transition: 200ms;
+            cursor: pointer;
+            &:hover{background: darken(@support-color, 10)}
+            &::-moz-focus-inner{border: 0} 
+          }
           &[type="email"]{
-            background-color: #eee;
+            background-color: darken(@main-color, 7);
+            text-align: right;
             color: black;
             width: 80%}
         }

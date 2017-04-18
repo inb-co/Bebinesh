@@ -27,59 +27,67 @@
   left: 0;
   margin: auto;
   z-index: 3002;
-  height: 400px;
-  width: 800px;
 }
 .bedesh .bedesh-container .bedesh-header {
-  background-color: #ff4235;
+  background-color: #f32b1b;
   border-radius: 0 0 30px 0;
-  position: relative;
-  overflow: hidden;
-  padding-top: 300px;
+  padding: 36px;
 }
-.bedesh .bedesh-container .bedesh-header .bedesh-header-image {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+.bedesh .bedesh-container .bedesh-header img {
+  width: 100%;
+  height: auto;
+}
+.bedesh .bedesh-container .bedesh-header img path {
+  fill: white;
 }
 .bedesh .bedesh-container .bedesh-body {
-  background-color: white;
+  background-color: #fff;
   position: relative;
   text-align: right;
-  padding: 12px 36px 24px;
+  padding: 24px 36px 36px;
   border-radius: 0  30px 0 0;
 }
-.bedesh .bedesh-container .bedesh-body .bedesh-body-text {
-  font-size: 14px;
-  font-weight: bold;
-  margin: 0 0 12px;
-}
-.bedesh .bedesh-container .bedesh-body .bedesh-form {
+.bedesh .bedesh-container .bedesh-body form {
   position: relative;
 }
-.bedesh .bedesh-container .bedesh-body .bedesh-form:before,
-.bedesh .bedesh-container .bedesh-body .bedesh-form:after {
+.bedesh .bedesh-container .bedesh-body form:before,
+.bedesh .bedesh-container .bedesh-body form:after {
   display: table;
   content: " ";
   clear: both;
 }
-.bedesh .bedesh-container .bedesh-body .bedesh-form input {
+.bedesh .bedesh-container .bedesh-body form p {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 0 24px;
+}
+.bedesh .bedesh-container .bedesh-body form input {
   font-family: 'Vazir', 'Roboto', Tahoma;
   font-size: 12px;
-  padding: 12px 0;
+  line-height: 2;
+  padding: 12px;
   border: none;
-  float: left;
+  float: right;
   position: relative;
+  height: 50px;
+  outline: none !important;
 }
-.bedesh .bedesh-container .bedesh-body .bedesh-form input[type="submit"] {
-  background-color: #ff4235;
-  color: white;
+.bedesh .bedesh-container .bedesh-body form input[type="submit"] {
+  background-color: #f32b1b;
+  color: #fff;
   width: 20%;
+  transition: 200ms;
+  cursor: pointer;
 }
-.bedesh .bedesh-container .bedesh-body .bedesh-form input[type="email"] {
-  background-color: #eee;
+.bedesh .bedesh-container .bedesh-body form input[type="submit"]:hover {
+  background: #d01a0b;
+}
+.bedesh .bedesh-container .bedesh-body form input[type="submit"]::-moz-focus-inner {
+  border: 0px;
+}
+.bedesh .bedesh-container .bedesh-body form input[type="email"] {
+  background-color: #ededed;
+  text-align: right;
   color: black;
   width: 80%;
 }
