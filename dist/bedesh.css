@@ -1,4 +1,8 @@
+.bedesh-show .bedesh {
+  display: block;
+}
 .bedesh {
+  display: none;
   font-family: 'Vazir', 'Roboto', Tahoma;
   position: fixed;
   top: 0;
@@ -7,15 +11,26 @@
   left: 0;
   z-index: 3000;
   text-align: center;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-name: begiresh-fadeIn;
+          animation-name: begiresh-fadeIn;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
 }
-.bedesh .begiresh-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+.bedesh .bedesh-overlay {
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
   z-index: 3001;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-name: begiresh-fadeIn;
+          animation-name: begiresh-fadeIn;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
 }
 .bedesh .bedesh-container {
   position: absolute;
@@ -76,6 +91,7 @@
   background-color: #f32b1b;
   color: #fff;
   width: 27%;
+  -webkit-transition: 200ms;
   transition: 200ms;
   cursor: pointer;
 }
@@ -90,4 +106,24 @@
   text-align: right;
   color: black;
   width: 73%;
+}
+@-webkit-keyframes begiresh-fadeIn {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 0;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+  }
+}
+@keyframes begiresh-fadeIn {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 0;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+  }
 }

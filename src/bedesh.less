@@ -4,22 +4,39 @@
 @support-color: #f32b1b;
 @main-color: #fff;
 
-//overlay
+// Overlay
 @overlay-opacity: 50;
 
+// Animations
+@container-duration: .5s;
+@container-animation: begiresh-fadeIn;
+@overlay-duration: .5s;
+@overlay-animation: begiresh-fadeIn;
+
+.bedesh-show{
+	.bedesh{display: block}
+}
+
 .bedesh{
+  display: none;
   font-family: @font;
   position: fixed;
   top: 0; bottom: 0;
   right: 0; left: 0;
   z-index: 3000;
   text-align: center;
-  .begiresh-overlay{
-    background-color: fade(black, @overlay-opacity);
+  animation-duration: @container-duration;
+  animation-name: @overlay-animation;
+  animation-fill-mode: both;
+  .bedesh-overlay{
     position: absolute;
     top: 0; bottom: 0;
     right: 0; left: 0;
-    z-index: 3001}
+    z-index: 3001;
+    animation-duration: @overlay-duration;
+    animation-name: @overlay-animation;
+    animation-fill-mode: both;
+  }
   .bedesh-container{
     position: absolute;
     display: inline-block;
@@ -28,7 +45,6 @@
     right: 0; left: 0;
     margin: auto;
     z-index: 3002;
-
     .bedesh-header{
       background-color: @support-color;
       border-radius: 0 0 30px 0;
@@ -81,5 +97,17 @@
         }
       }
     }
+  }
+}
+
+@keyframes begiresh-fadeIn {
+  from {
+    background-color: fade(black, 0);
+    opacity: 0;
+  }
+
+  to {
+    background-color: fade(black, @overlay-opacity);
+    opacity: 1;
   }
 }
