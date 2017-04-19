@@ -1,6 +1,6 @@
 {
   "name": "bedesh",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Get user's email through modal",
   "main": "index.js",
   "scripts": {
