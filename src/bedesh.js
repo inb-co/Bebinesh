@@ -18,8 +18,9 @@ let Bedesh = function (options) {
 	this.options = extend({}, {
     daysHidden: 15, // Numbers of days to hide banner after dismissed
     daysReminder: 90, // Numbers of days to hide banner after downloaded
-    headerContent: '',
-    bodyContent: '',
+    headerContent: '', // Content in header
+    bodyContent: '', // Contetn in Body
+    formAction: '', // Action of form
     force: false, // always show banner
     onSubmit: function(){}, // On Submit callback
     onClose: function() {} // On Dismiss callback
@@ -48,7 +49,7 @@ Bedesh.prototype = {
                             this.options.headerContent +
                           '</div>'+
                           '<div class="bedesh-body">'+
-                            '<form action="" novalidate>'+
+                            '<form action="' + this.options.formAction + '" novalidate>'+
                               this.options.bodyContent +
                               '<input type="email" placeholder="ایمیل خود را وارد کنید">'+
                               '<input type="submit" value="ثبت ایمیل">'+
@@ -86,7 +87,9 @@ Bedesh.prototype = {
     event.preventDefault();
     const email = q('input[type="email"]', modal).value;
     if(validator.validate(email)){
-      this.options.onSubmit.call();
+      if (!this.options.formAction) {
+        this.options.onSubmit.call();
+      }
       this.hide();
   		cookie.set('Bedesh-submited', 'true', {
   			path: '/',
