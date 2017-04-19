@@ -13,7 +13,7 @@ const today = Number(new Date());
 // root and Dom
 let root = doc && doc.documentElement;
 
-let Bedesh = function (options) {
+let Bedesh = function (options, callback) {
 
 	this.options = extend({}, {
     daysHidden: 15, // Numbers of days to hide banner after dismissed
@@ -33,6 +33,7 @@ let Bedesh = function (options) {
 
 	this.create();
 	this.show();
+
 };
 
 Bedesh.prototype = {
