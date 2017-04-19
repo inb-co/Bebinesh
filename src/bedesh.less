@@ -3,6 +3,7 @@
 @font: 'Vazir', 'Roboto', Tahoma;
 @support-color: #f32b1b;
 @main-color: #fff;
+@error-color: #f32b1b;
 
 // Overlay
 @overlay-opacity: 50;
@@ -25,6 +26,7 @@
   right: 0; left: 0;
   z-index: 3000;
   text-align: center;
+  direction: rtl;
   animation-duration: @container-duration;
   animation-name: @overlay-animation;
   animation-fill-mode: both;
@@ -96,6 +98,12 @@
             width: 73%}
         }
       }
+      .bedesh-error{
+        color: @error-color;
+        font-size: 12px;
+        font-weight: 300;
+        margin: 12px 0 -12px;
+        display: block}
     }
   }
 }

@@ -11,6 +11,7 @@
   left: 0;
   z-index: 3000;
   text-align: center;
+  direction: rtl;
   -webkit-animation-duration: 0.5s;
           animation-duration: 0.5s;
   -webkit-animation-name: begiresh-fadeIn;
@@ -106,6 +107,13 @@
   text-align: right;
   color: black;
   width: 73%;
+}
+.bedesh .bedesh-container .bedesh-body .bedesh-error {
+  color: #f32b1b;
+  font-size: 12px;
+  font-weight: 300;
+  margin: 12px 0 -12px;
+  display: block;
 }
 @-webkit-keyframes begiresh-fadeIn {
   from {

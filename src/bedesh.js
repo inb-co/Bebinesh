@@ -4,8 +4,7 @@ const extend = require('xtend/mutable');
 const q = require('component-query');
 const doc = require('get-doc');
 const cookie = require('cookie-cutter');
-
-console.log('here is Bedesh');
+const validator = require('email-validator');
 
 // date parsing
 const msInOneDay = 1000 * 60 * 60 * 24;
@@ -40,8 +39,6 @@ Bedesh.prototype = {
 
 	create: function () {
 
-    console.log('creat');
-
 		let modal = doc.createElement('div');
 
 		modal.className = 'bedesh';
@@ -51,7 +48,7 @@ Bedesh.prototype = {
                             this.options.headerContent +
                           '</div>'+
                           '<div class="bedesh-body">'+
-                            '<form action="">'+
+                            '<form action="" novalidate>'+
                               this.options.bodyContent +
                               '<input type="email" placeholder="ایمیل خود را وارد کنید">'+
                               '<input type="submit" value="ثبت ایمیل">'+
@@ -68,19 +65,17 @@ Bedesh.prototype = {
 			});
 		}
 
-		// q('.Bedesh-download', modal).addEventListener('click', this.submit.bind(this), false);
-		q('.bedesh-close', modal).addEventListener('click', this.close.bind(this), false);
+    q('form', modal).addEventListener('submit', this.submit.bind(this), false);
+  	q('.bedesh-close', modal).addEventListener('click', this.close.bind(this), false);
 	},
 	hide: function () {
-    console.log('hide');
 		root.classList.remove('bedesh-show');
 	},
 	show: function () {
-    console.log('show');
 		root.classList.add('bedesh-show');
 	},
 	close: function () {
-    console.log('close');
+    this.options.onClose.call();
 		this.hide();
 		cookie.set('Bedesh-closed', 'true', {
 			path: '/',
@@ -88,12 +83,29 @@ Bedesh.prototype = {
 		});
 	},
 	submit: function () {
-		this.hide();
-		cookie.set('Bedesh-submited', 'true', {
-			path: '/',
-			expires: this.getExpirationDate(this.options.daysReminder)
-		});
+    event.preventDefault();
+    const email = q('input[type="email"]', modal).value;
+    if(validator.validate(email)){
+      this.options.onSubmit.call();
+      this.hide();
+  		cookie.set('Bedesh-submited', 'true', {
+  			path: '/',
+  			expires: this.getExpirationDate(this.options.daysReminder)
+  		});
+    } else {
+      this.showError('ایمیل معتبر نمی‌باشد.')
+    }
 	},
+  showError: function (text) {
+    if(q('.bedesh-error', modal)){
+      q('.bedesh-error', modal).innerText = text
+    } else {
+      let error = doc.createElement('span');
+      error.className = 'bedesh-error';
+      error.innerText = text;
+      q('.bedesh-body', modal).appendChild(error);
+    }
+  },
 	getExpirationDate: function (remainingDays) {
 		return new Date(today + (remainingDays * msInOneDay))
 	}
