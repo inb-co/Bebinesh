@@ -108,6 +108,10 @@ Bedesh.prototype = {
       error.innerText = text;
       q('.bedesh-body', modal).appendChild(error);
     }
+    setTimeout(function () {
+      q('.bedesh-error', modal).outerHTML = '';
+    }, 5000);
+
   },
 	getExpirationDate: function (remainingDays) {
 		return new Date(today + (remainingDays * msInOneDay))

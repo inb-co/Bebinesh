@@ -6,16 +6,28 @@
 @error-color: #f32b1b;
 
 // Overlay
-@overlay-opacity: 50;
+@overlay-opacity: 0.47;
 
 // Animations
-@container-duration: .5s;
-@container-animation: begiresh-fadeIn;
-@overlay-duration: .5s;
-@overlay-animation: begiresh-fadeIn;
+@animation-duration: .5s;
+@animation-in: begiresh-fadeIn;
+@animation-out: begiresh-fadeOut;
 
 .bedesh-show{
-	.bedesh{display: block}
+  .bedesh{
+    display: block;
+    .comeIn}
+}
+
+.comeIn{
+  animation-duration: @animation-duration;
+  animation-name: @animation-in;
+  animation-fill-mode: both;
+}
+.goOut{
+  animation-duration: @animation-duration;
+  animation-name: @animation-out;
+  animation-fill-mode: both;
 }
 
 .bedesh{
@@ -27,18 +39,12 @@
   z-index: 3000;
   text-align: center;
   direction: rtl;
-  animation-duration: @container-duration;
-  animation-name: @overlay-animation;
-  animation-fill-mode: both;
   .bedesh-overlay{
+    background-color: rgba(0, 0, 0, @overlay-opacity);
     position: absolute;
     top: 0; bottom: 0;
     right: 0; left: 0;
-    z-index: 3001;
-    animation-duration: @overlay-duration;
-    animation-name: @overlay-animation;
-    animation-fill-mode: both;
-  }
+    z-index: 3001}
   .bedesh-container{
     position: absolute;
     display: inline-block;
@@ -109,13 +115,10 @@
 }
 
 @keyframes begiresh-fadeIn {
-  from {
-    background-color: fade(black, 0);
-    opacity: 0;
-  }
-
-  to {
-    background-color: fade(black, @overlay-opacity);
-    opacity: 1;
-  }
+  from {opacity: 0}
+  to {opacity: 1}
+}
+@keyframes begiresh-fadeOut {
+  from {opacity: 1}
+  to {opacity: 0}
 }

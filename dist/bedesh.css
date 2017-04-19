@@ -1,5 +1,27 @@
 .bedesh-show .bedesh {
   display: block;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-name: begiresh-fadeIn;
+          animation-name: begiresh-fadeIn;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.comeIn {
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-name: begiresh-fadeIn;
+          animation-name: begiresh-fadeIn;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.goOut {
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-name: begiresh-fadeOut;
+          animation-name: begiresh-fadeOut;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
 }
 .bedesh {
   display: none;
@@ -12,26 +34,15 @@
   z-index: 3000;
   text-align: center;
   direction: rtl;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-name: begiresh-fadeIn;
-          animation-name: begiresh-fadeIn;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
 }
 .bedesh .bedesh-overlay {
+  background-color: rgba(0, 0, 0, 0.47);
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
   z-index: 3001;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-name: begiresh-fadeIn;
-          animation-name: begiresh-fadeIn;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
 }
 .bedesh .bedesh-container {
   position: absolute;
@@ -117,21 +128,33 @@
 }
 @-webkit-keyframes begiresh-fadeIn {
   from {
-    background-color: rgba(0, 0, 0, 0);
     opacity: 0;
   }
   to {
-    background-color: rgba(0, 0, 0, 0.5);
     opacity: 1;
   }
 }
 @keyframes begiresh-fadeIn {
   from {
-    background-color: rgba(0, 0, 0, 0);
     opacity: 0;
   }
   to {
-    background-color: rgba(0, 0, 0, 0.5);
     opacity: 1;
+  }
+}
+@-webkit-keyframes begiresh-fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes begiresh-fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
