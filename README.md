@@ -1,5 +1,5 @@
-# Bedesh
+# Bebinesh
 
-A simple modal to get user's email address.
+A lightweight promotional modal
 
 *Note: this product is yet under development. use with caution!*

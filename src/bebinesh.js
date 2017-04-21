@@ -13,7 +13,7 @@ const today = Number(new Date());
 // root and Dom
 let root = doc && doc.documentElement;
 
-let Bedesh = function (options, callback) {
+let Bebinesh = function (options, callback) {
 
 	this.options = extend({}, {
     daysHidden: 15, // Numbers of days to hide banner after dismissed
@@ -26,8 +26,8 @@ let Bedesh = function (options, callback) {
     onClose: function() {} // On Dismiss callback
 	}, options || arguments[0] || {});
 
-	const userDismissed = cookie.get('Bedesh-closed');
-	const userSubmited = cookie.get('Bedesh-submited');
+	const userDismissed = cookie.get('Bebinesh-closed');
+	const userSubmited = cookie.get('Bebinesh-submited');
 
 	if (!this.options.force && (userDismissed || userSubmited)) return;
 
@@ -36,20 +36,20 @@ let Bedesh = function (options, callback) {
 
 };
 
-Bedesh.prototype = {
-	constructor: Bedesh,
+Bebinesh.prototype = {
+	constructor: Bebinesh,
 
 	create: function () {
 
 		let modal = doc.createElement('div');
 
-		modal.className = 'bedesh';
-		modal.innerHTML = '<div class="bedesh-overlay bedesh-close"></div>'+
-                        '<div class="bedesh-container">'+
-                          '<div class="bedesh-header">'+
+		modal.className = 'bebinesh';
+		modal.innerHTML = '<div class="bebinesh-overlay bebinesh-close"></div>'+
+                        '<div class="bebinesh-container">'+
+                          '<div class="bebinesh-header">'+
                             this.options.headerContent +
                           '</div>'+
-                          '<div class="bedesh-body">'+
+                          '<div class="bebinesh-body">'+
                             '<form action="' + this.options.formAction + '" novalidate>'+
                               this.options.bodyContent +
                               '<input type="email" placeholder="ایمیل خود را وارد کنید">'+
@@ -68,18 +68,18 @@ Bedesh.prototype = {
 		}
 
     q('form', modal).addEventListener('submit', this.submit.bind(this), false);
-  	q('.bedesh-close', modal).addEventListener('click', this.close.bind(this), false);
+  	q('.bebinesh-close', modal).addEventListener('click', this.close.bind(this), false);
 	},
 	hide: function () {
-		root.classList.remove('bedesh-show');
+		root.classList.remove('bebinesh-show');
 	},
 	show: function () {
-		root.classList.add('bedesh-show');
+		root.classList.add('bebinesh-show');
 	},
 	close: function () {
     this.options.onClose.call();
 		this.hide();
-		cookie.set('Bedesh-closed', 'true', {
+		cookie.set('Bebinesh-closed', 'true', {
 			path: '/',
 			expires: this.getExpirationDate(this.options.daysHidden)
 		});
@@ -92,7 +92,7 @@ Bedesh.prototype = {
         this.options.onSubmit.call();
       }
       this.hide();
-  		cookie.set('Bedesh-submited', 'true', {
+  		cookie.set('Bebinesh-submited', 'true', {
   			path: '/',
   			expires: this.getExpirationDate(this.options.daysReminder)
   		});
@@ -101,16 +101,16 @@ Bedesh.prototype = {
     }
 	},
   showError: function (text) {
-    if(q('.bedesh-error', modal)){
-      q('.bedesh-error', modal).innerText = text
+    if(q('.bebinesh-error', modal)){
+      q('.bebinesh-error', modal).innerText = text
     } else {
       let error = doc.createElement('span');
-      error.className = 'bedesh-error';
+      error.className = 'bebinesh-error';
       error.innerText = text;
-      q('.bedesh-body', modal).appendChild(error);
+      q('.bebinesh-body', modal).appendChild(error);
     }
     setTimeout(function () {
-      q('.bedesh-error', modal).outerHTML = '';
+      q('.bebinesh-error', modal).outerHTML = '';
     }, 5000);
 
   },
@@ -119,4 +119,4 @@ Bedesh.prototype = {
 	}
 };
 
-module.exports = Bedesh;
+module.exports = Bebinesh;

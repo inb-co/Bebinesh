@@ -1,29 +1,30 @@
 {
-  "name": "bedesh",
-  "version": "0.1.0",
-  "description": "Get user's email through modal",
+  "name": "Bebinesh",
+  "version": "0.2.0",
+  "description": "A lightweight promotional modal",
   "main": "index.js",
   "scripts": {
-    "build-css": "catw -c 'lessc -' 'src/bedesh.less' > dist/bedesh.css && postcss dist/bedesh.css --use autoprefixer -r --no-map",
-    "build-js": "browserify src/bedesh.js -s Bedesh | ccjs - > dist/bedesh.js",
+    "build-css": "catw -c 'lessc -' 'src/bebinesh.less' > dist/bebinesh.css && postcss dist/bebinesh.css --use autoprefixer -r --no-map",
+    "build-js": "browserify src/bebinesh.js -s Bebinesh | ccjs - > dist/bebinesh.js",
     "build": "npm run build-js && npm run build-css"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Javid-Izadfar/Bedesh.git"
+    "url": "git+https://github.com/Javid-Izadfar/Bebinesh.git"
   },
   "keywords": [
     "Iran",
     "Email",
     "Farsi",
-    "Modal"
+    "Modal",
+    "Promotion"
   ],
   "author": "Javid Izadfar",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Javid-Izadfar/Bedesh/issues"
+    "url": "https://github.com/Javid-Izadfar/Bebinesh/issues"
   },
-  "homepage": "https://github.com/Javid-Izadfar/Bedesh#readme",
+  "homepage": "https://github.com/Javid-Izadfar/Bebinesh#readme",
   "dependencies": {
     "component-query": "^0.0.3",
     "cookie-cutter": "^0.1.1",

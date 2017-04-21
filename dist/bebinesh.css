@@ -1,4 +1,4 @@
-.bedesh-show .bedesh {
+.bebinesh-show .bebinesh {
   display: block;
   -webkit-animation-duration: 0.5s;
           animation-duration: 0.5s;
@@ -23,7 +23,7 @@
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
 }
-.bedesh {
+.bebinesh {
   display: none;
   font-family: 'Vazir', 'Roboto', Tahoma;
   position: fixed;
@@ -35,7 +35,7 @@
   text-align: center;
   direction: rtl;
 }
-.bedesh .bedesh-overlay {
+.bebinesh .bebinesh-overlay {
   background-color: rgba(0, 0, 0, 0.47);
   position: absolute;
   top: 0;
@@ -44,7 +44,7 @@
   left: 0;
   z-index: 3001;
 }
-.bedesh .bedesh-container {
+.bebinesh .bebinesh-container {
   position: absolute;
   display: inline-block;
   vertical-align: middle;
@@ -55,40 +55,40 @@
   margin: auto;
   z-index: 3002;
 }
-.bedesh .bedesh-container .bedesh-header {
+.bebinesh .bebinesh-container .bebinesh-header {
   background-color: #f32b1b;
   border-radius: 0 0 30px 0;
   padding: 36px;
 }
-.bedesh .bedesh-container .bedesh-header img {
+.bebinesh .bebinesh-container .bebinesh-header img {
   width: 100%;
   height: auto;
 }
-.bedesh .bedesh-container .bedesh-header img path {
+.bebinesh .bebinesh-container .bebinesh-header img path {
   fill: white;
 }
-.bedesh .bedesh-container .bedesh-body {
+.bebinesh .bebinesh-container .bebinesh-body {
   background-color: #fff;
   position: relative;
   text-align: right;
   padding: 30px 36px 36px;
   border-radius: 0  30px 0 0;
 }
-.bedesh .bedesh-container .bedesh-body form {
+.bebinesh .bebinesh-container .bebinesh-body form {
   position: relative;
 }
-.bedesh .bedesh-container .bedesh-body form:before,
-.bedesh .bedesh-container .bedesh-body form:after {
+.bebinesh .bebinesh-container .bebinesh-body form:before,
+.bebinesh .bebinesh-container .bebinesh-body form:after {
   display: table;
   content: " ";
   clear: both;
 }
-.bedesh .bedesh-container .bedesh-body form p {
+.bebinesh .bebinesh-container .bebinesh-body form p {
   font-size: 13px;
   font-weight: 500;
   margin: 0 0 13px;
 }
-.bedesh .bedesh-container .bedesh-body form input {
+.bebinesh .bebinesh-container .bebinesh-body form input {
   font-family: 'Vazir', 'Roboto', Tahoma;
   font-size: 12px;
   line-height: 2;
@@ -99,7 +99,7 @@
   height: 50px;
   outline: none !important;
 }
-.bedesh .bedesh-container .bedesh-body form input[type="submit"] {
+.bebinesh .bebinesh-container .bebinesh-body form input[type="submit"] {
   background-color: #f32b1b;
   color: #fff;
   width: 27%;
@@ -107,19 +107,19 @@
   transition: 200ms;
   cursor: pointer;
 }
-.bedesh .bedesh-container .bedesh-body form input[type="submit"]:hover {
+.bebinesh .bebinesh-container .bebinesh-body form input[type="submit"]:hover {
   background: #d01a0b;
 }
-.bedesh .bedesh-container .bedesh-body form input[type="submit"]::-moz-focus-inner {
+.bebinesh .bebinesh-container .bebinesh-body form input[type="submit"]::-moz-focus-inner {
   border: 0;
 }
-.bedesh .bedesh-container .bedesh-body form input[type="email"] {
+.bebinesh .bebinesh-container .bebinesh-body form input[type="email"] {
   background-color: #ededed;
   text-align: right;
   color: black;
   width: 73%;
 }
-.bedesh .bedesh-container .bedesh-body .bedesh-error {
+.bebinesh .bebinesh-container .bebinesh-body .bebinesh-error {
   color: #f32b1b;
   font-size: 12px;
   font-weight: 300;
