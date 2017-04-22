@@ -103,7 +103,6 @@
   background-color: #f32b1b;
   color: #fff;
   width: 27%;
-  -webkit-transition: 200ms;
   transition: 200ms;
   cursor: pointer;
 }
