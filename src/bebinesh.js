@@ -15,11 +15,11 @@ let root = doc && doc.documentElement;
 let Bebinesh = function (options, callback) {
 
 	this.options = extend({}, {
-    daysHidden: 15, // Numbers of days to hide banner after dismissed
-    daysReminder: 90, // Numbers of days to hide banner after downloaded
-		contetn: '',
-    force: false, // always show banner
-    onProgress: function(){}, // On Submit callback
+    daysHidden: 15, // Numbers of days to hide modal after dismissed
+    daysReminder: 90, // Numbers of days to hide modal after progressed
+		content: '', // Content of modal
+    force: false, // always show modal
+    onProgress: function(){}, // On Progress callback
     onClose: function() {} // On Dismiss callback
 	}, options || arguments[0] || {});
 
@@ -42,10 +42,10 @@ Bebinesh.prototype = {
 
 		modal.className = 'bebinesh';
 		modal.innerHTML = '<div class="bebinesh-overlay bebinesh-close"></div>'+
-                        '<div class="bebinesh-container">'+
-
-                          '</div>'+
-                        '</div>';
+                        '<div class="bebinesh-content">'+
+													this.options.content +
+                        '</div>'+
+                      '</div>';
 
 		// there isn’t neccessary a body
 		if (doc.body) {
@@ -56,7 +56,7 @@ Bebinesh.prototype = {
 			});
 		}
 
-    // q('form', modal).addEventListener('submit', this.submit.bind(this), false);
+    q('.bebinesh-progress', modal).addEventListener('submit', this.submit.bind(this), false);
   	q('.bebinesh-close', modal).addEventListener('click', this.close.bind(this), false);
 	},
 	hide: function () {

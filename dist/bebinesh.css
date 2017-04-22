@@ -44,7 +44,7 @@
   left: 0;
   z-index: 3001;
 }
-.bebinesh .bebinesh-container {
+.bebinesh .bebinesh-content {
   position: absolute;
   display: inline-block;
   vertical-align: middle;
@@ -54,76 +54,6 @@
   left: 0;
   margin: auto;
   z-index: 3002;
-}
-.bebinesh .bebinesh-container .bebinesh-header {
-  background-color: #f32b1b;
-  border-radius: 0 0 30px 0;
-  padding: 36px;
-}
-.bebinesh .bebinesh-container .bebinesh-header img {
-  width: 100%;
-  height: auto;
-}
-.bebinesh .bebinesh-container .bebinesh-header img path {
-  fill: white;
-}
-.bebinesh .bebinesh-container .bebinesh-body {
-  background-color: #fff;
-  position: relative;
-  text-align: right;
-  padding: 30px 36px 36px;
-  border-radius: 0  30px 0 0;
-}
-.bebinesh .bebinesh-container .bebinesh-body form {
-  position: relative;
-}
-.bebinesh .bebinesh-container .bebinesh-body form:before,
-.bebinesh .bebinesh-container .bebinesh-body form:after {
-  display: table;
-  content: " ";
-  clear: both;
-}
-.bebinesh .bebinesh-container .bebinesh-body form p {
-  font-size: 13px;
-  font-weight: 500;
-  margin: 0 0 13px;
-}
-.bebinesh .bebinesh-container .bebinesh-body form input {
-  font-family: 'Vazir', 'Roboto', Tahoma;
-  font-size: 12px;
-  line-height: 2;
-  padding: 12px;
-  border: none;
-  float: right;
-  position: relative;
-  height: 50px;
-  outline: none !important;
-}
-.bebinesh .bebinesh-container .bebinesh-body form input[type="submit"] {
-  background-color: #f32b1b;
-  color: #fff;
-  width: 27%;
-  transition: 200ms;
-  cursor: pointer;
-}
-.bebinesh .bebinesh-container .bebinesh-body form input[type="submit"]:hover {
-  background: #d01a0b;
-}
-.bebinesh .bebinesh-container .bebinesh-body form input[type="submit"]::-moz-focus-inner {
-  border: 0;
-}
-.bebinesh .bebinesh-container .bebinesh-body form input[type="email"] {
-  background-color: #ededed;
-  text-align: right;
-  color: black;
-  width: 73%;
-}
-.bebinesh .bebinesh-container .bebinesh-body .bebinesh-error {
-  color: #f32b1b;
-  font-size: 12px;
-  font-weight: 300;
-  margin: 12px 0 -12px;
-  display: block;
 }
 @-webkit-keyframes begiresh-fadeIn {
   from {
