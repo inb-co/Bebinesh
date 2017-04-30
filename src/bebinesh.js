@@ -59,7 +59,7 @@ Bebinesh.prototype = {
 			});
 		}
 
-    q('.bebinesh-progress', modal).addEventListener('submit', this.progress.bind(this), false);
+    q('.bebinesh-progress', modal).addEventListener('click', this.progress.bind(this), false);
   	q('.bebinesh-close', modal).addEventListener('click', this.close.bind(this), false);
 	},
 	hide: function () {
