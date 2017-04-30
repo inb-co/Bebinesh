@@ -55,6 +55,15 @@
   margin: auto;
   z-index: 3002;
 }
+.bebinesh .bebinesh-content a {
+  outline: none;
+  display: block;
+}
+.bebinesh .bebinesh-content a img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 @-webkit-keyframes begiresh-fadeIn {
   from {
     opacity: 0;

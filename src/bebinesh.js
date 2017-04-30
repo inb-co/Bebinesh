@@ -17,8 +17,9 @@ let Bebinesh = function (options, callback) {
 	this.options = extend({}, {
     daysHidden: 15, // Numbers of days to hide modal after dismissed
     daysReminder: 90, // Numbers of days to hide modal after progressed
-		content: '', // Content of modal
-    force: false, // always show modal
+		title: '', // Title of link and alt for image
+		target: '_blank', // How to open link
+  	force: false, // always show modal
     onProgress: function(){}, // On Progress callback
     onClose: function() {} // On Dismiss callback
 	}, options || arguments[0] || {});
@@ -43,7 +44,9 @@ Bebinesh.prototype = {
 		modal.className = 'bebinesh';
 		modal.innerHTML = '<div class="bebinesh-overlay bebinesh-close"></div>'+
                         '<div class="bebinesh-content">'+
-													this.options.content +
+													'<a href="' + this.options.href + '" title="' + this.options.title + '" target="' + this.options.target + '">'+
+													 	'<img src="' + this.options.src + '" alt="' + this.options.title + '">'+
+													'</a>'+
                         '</div>'+
                       '</div>';
 
