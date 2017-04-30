@@ -44,7 +44,7 @@ Bebinesh.prototype = {
 		modal.className = 'bebinesh';
 		modal.innerHTML = '<div class="bebinesh-overlay bebinesh-close"></div>'+
                         '<div class="bebinesh-content">'+
-													'<a href="' + this.options.href + '" title="' + this.options.title + '" target="' + this.options.target + '">'+
+													'<a href="' + this.options.href + '" title="' + this.options.title + '" target="' + this.options.target + '" class="bebinesh-progress">'+
 													 	'<img src="' + this.options.src + '" alt="' + this.options.title + '">'+
 													'</a>'+
                         '</div>'+
@@ -59,7 +59,7 @@ Bebinesh.prototype = {
 			});
 		}
 
-    // q('.bebinesh-progress', modal).addEventListener('submit', this.submit.bind(this), false);
+    q('.bebinesh-progress', modal).addEventListener('submit', this.progress.bind(this), false);
   	q('.bebinesh-close', modal).addEventListener('click', this.close.bind(this), false);
 	},
 	hide: function () {
