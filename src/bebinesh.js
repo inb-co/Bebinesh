@@ -24,8 +24,14 @@ let Bebinesh = function (options, callback) {
     onClose: function() {} // On Dismiss callback
 	}, options || arguments[0] || {});
 
-	const userDismissed = cookie.get('Bebinesh-closed');
-	const userProgressed = cookie.get('Bebinesh-progressed');
+	if ( this.options.name ){
+		this.options.name = '-' + this.options.name.replace(/\s/g, '-')
+	} else {
+		this.options.name = ''
+	}
+
+	const userDismissed = cookie.get('Bebinesh-closed' + this.options.name);
+	const userProgressed = cookie.get('Bebinesh-progressed' + this.options.name);
 
 	if (!this.options.force && (userDismissed || userProgressed)) return;
 
@@ -71,14 +77,14 @@ Bebinesh.prototype = {
 	close: function () {
     this.options.onClose.call();
 		this.hide();
-		cookie.set('Bebinesh-closed', 'true', {
+		cookie.set('Bebinesh-closed' + this.options.name, 'true', {
 			path: '/',
 			expires: this.getExpirationDate(this.options.daysHidden)
 		});
 	},
 	progress: function () {
 		this.hide();
-		cookie.set('Bebinesh-progressed', 'true', {
+		cookie.set('Bebinesh-progressed' + this.options.name, 'true', {
 			path: '/',
 			expires: this.getExpirationDate(this.options.daysReminder)
 		});
